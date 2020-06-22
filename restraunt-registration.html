@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESTRAUNT REGISTRATION</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+			function validateForm() 
+			{	
+  				var x = document.getElementById('passw').value;
+  				var y = document.getElementById('passwConfirm').value;
+  				if (x != y) 
+  				{
+    				alert("PASSWORDS DO NOT MATCH");
+    				return false;
+  				}
+  				var mob = /^[1-9]{1}[0-9]{9}$/;
+    			var txtMobile = document.getElementById('mobile');
+    			if (mob.test(txtMobile.value) == false) 
+    			{
+        			alert("Please enter valid mobile number.");
+        			txtMobile.focus();
+        			return false;
+        		}
+  				var letters = /^[A-Za-z]+$/;
+  				var inputtxt = document.getElementById('naam')
+   				if(inputtxt == "")
+     			{
+      				alert("Please enter a valid name");
+      				return false
+     			}
+  				return true;
+			}
+		</script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+   
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<form action="restraunt-registration.php" method="POST" style="max-width:500px;margin:auto">
+  <h2 align="center">Register Form</h2>
+  <br>
+  <br>
+  <div class="input-container">
+    <input class="input-field" type="text" placeholder="Restraunt Name" name="naam" id="naam" required>
+  </div>
+
+  <div class="input-container">
+    <input class="input-field" type="text" placeholder="Mobile Number" name="mobile" id="mobile" required>
+  </div>
+  
+  <div class="input-container">
+    <input class="input-field" type="password" id="passw" placeholder="Password" name="passw" required>
+  </div>
+
+  <div class="input-container">
+    <input class="input-field" type="password" id="passwConfirm" placeholder="Confirm Password" name="passwConfirm" required>
+  </div>
+  <br>
+  <br>
+  <div align="center">
+  <button type="submit" class="btn" onclick="return validateForm()">Register</button>
+  </div>
+</form>
+
+</body>
+</html>
