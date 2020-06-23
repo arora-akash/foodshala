@@ -127,7 +127,7 @@
     {
     	echo '<br>';
     	echo '<br>';
-    	$sql =  "SELECT c_name, dish, price from orders WHERE r_name = '".$_SESSION['user_name']."'";
+    	$sql =  "SELECT c_name, dish, price, dt from orders WHERE r_name = '".$_SESSION['user_name']."'";
 		$execute = mysqli_query($check,$sql);
 		echo '<div class="container" align="center">
     		<table id="menu" class="table table-hover table-responsive">
