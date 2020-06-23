@@ -1,12 +1,11 @@
 <?php
-	session_start();
-	$server = "localhost";
-	$user = "root";
-	$pass = "";
+	$server = "us-cdbr-east-05.cleardb.net";
+	$user = "b9f744f1f8eff2";
+	$pass = "8cff06d6";
 
 	$check = mysqli_connect($server,$user,$pass);
 
-	$con = mysqli_select_db($check,"foodshala");
+	$con = mysqli_select_db($check,"heroku_f6fd5729b854288");
 
 	$dish = $_POST["dish"];
 	$custpref = $_POST["custpref"];
@@ -28,7 +27,7 @@
 
 	if($count==0)
 	{
-		echo '<script>alert("NO SUCH DISH EXIST! CHECK THE SPELLING OF THE DISH! OR CHECK FOR VEG/NON-VEG")</script>';
+		echo '<script>alert("NO SUCH DISH EXIST! CHECK FOR CORRECT SPELLING OF THE DISH! OR CHECK FOR VEG/NON-VEG")</script>';
 		echo '<script>window.location.href="restraunt-menu.php"</script>';		
 	}
 	
