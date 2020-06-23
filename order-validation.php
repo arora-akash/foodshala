@@ -11,13 +11,13 @@
     	echo '<script>window.location.href="foodshala.html"</script>';	
 	}
 
-	$username = "root";
-	$password = "";
-	$host = "localhost";
+	$username = "b9f744f1f8eff2";
+	$password = "8cff06d6";
+	$host = "us-cdbr-east-05.cleardb.net";
 
 	$check = mysqli_connect($host,$username,$password)
 	or die("Unable to connect");
-    $con = mysqli_select_db($check,"foodshala");
+    $con = mysqli_select_db($check,"heroku_f6fd5729b854288");
     if (mysqli_connect_errno())
   	{
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
