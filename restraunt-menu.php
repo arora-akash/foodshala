@@ -85,12 +85,39 @@
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         
         <button type="submit" class="btn btn-warning" id="addmenu" name="addmenu">ADD MENU</button>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+	<button type="submit" class="btn" id="deletemenu" name="deletemenu">DELETE MENU</button>    
     
 	</form>
 	
 </body>
 </html>
 <?php
+if(array_key_exists('deletemenu', $_POST))
+	{
+		echo "<br>";
+    	echo '<form action ="hello.php" method="POST" align="center">';
+		
+		echo '<br><br><input type="text" size="50" placeholder = "Enter Exact Dish Name" name="dish" required><br><br>';
+		
+		echo '<label class="sublime">';
+		echo '<input type="radio" id="veg" name="custpref" value="veg" required >';
+		echo '<label for="veg"><b>&nbsp VEG</b></label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+		echo '</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+
+		echo '<label class="sublime">';
+		echo '<input type="radio" id="non-veg" name="custpref" value="non-veg" >';
+		echo '<label for="non-veg"><b>&nbsp NON-VEG</b></label>';
+		echo '</label>';
+		echo '<br>';
+		echo '<br>';
+		echo '<br>';
+		echo '<input type="submit" class="btn btn-primary" style ="padding: 10px 30px";>';
+		echo '</form>';
+	}
 	if(array_key_exists('showmenu', $_POST)) 
 	{ 
         $sql123 = "SELECT dish, price, pref from menu WHERE r_name = '".$_SESSION['user_name']."'";
