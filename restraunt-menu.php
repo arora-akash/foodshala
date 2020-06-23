@@ -1,4 +1,12 @@
 <?php
+	
+	$server = "us-cdbr-east-05.cleardb.net";
+	$user = "b9f744f1f8eff2";
+	$pass = "8cff06d6";
+
+	$check = mysqli_connect($server,$user,$pass);
+
+	$con = mysqli_select_db($check,"heroku_f6fd5729b854288");
 	session_start();
 	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) 
 	{
@@ -17,13 +25,6 @@
     	echo '<script>window.location.href="foodshala.html"</script>';
 	}
 	
-	$server = "us-cdbr-east-05.cleardb.net";
-	$user = "b9f744f1f8eff2";
-	$pass = "8cff06d6";
-
-	$check = mysqli_connect($server,$user,$pass);
-
-	$con = mysqli_select_db($check,"heroku_f6fd5729b854288");
 ?>
 <!DOCTYPE html>
 <html>
@@ -127,7 +128,7 @@
     {
     	echo '<br>';
     	echo '<br>';
-    	$sql =  "SELECT c_name, dish, price, dt from orders WHERE r_name = '".$_SESSION['user_name']."'";
+    	$sql =  "SELECT c_name, dish, price, dt,c_mobile from orders WHERE r_name = '".$_SESSION['user_name']."'";
 		$execute = mysqli_query($check,$sql);
 		echo '<div class="container" align="center">
     		<table id="menu" class="table table-hover table-responsive">
@@ -135,6 +136,7 @@
     			<thead>
     	    		<tr>
           				<th><h4>CUSTOMER NAME</h4></th>
+					<th><h4>CUSTOMER MOBILE</h4></th>
           				<th><h4>DISH</h4></th>
           				<th><h4>PRICE</h4></th>
 					<th><h4>DATE-TIME</h4></th>
@@ -146,6 +148,7 @@
           				{
             				echo "<tr>
             	  			<td>{$row['c_name']}</td>
+					<td>{$row['c_mobile']}</td>
         	      			<td>{$row['dish']}</td>
               				<td>{$row['price']}</td>
 					<td>{$row['dt']}</td>";
