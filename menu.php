@@ -10,9 +10,9 @@
     	echo '</form>';
     	echo '</div>';
 	}
-	$username = "root";
-	$password = "";
-	$host = "localhost";
+	$username = "b9f744f1f8eff2";
+	$password = "8cff06d6";
+	$host = "us-cdbr-east-05.cleardb.net";
 
 	$connector = mysqli_connect($host,$username,$password)
 	or die("Unable to connect");
