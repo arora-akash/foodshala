@@ -114,6 +114,7 @@
         	      			<td>{$row['dish']}</td>
               				<td>{$row['price']}</td>
               				<td>{$row['pref']}</td>";
+						
               				echo "</tr>";
            				}
         			
@@ -136,6 +137,7 @@
           				<th><h4>CUSTOMER NAME</h4></th>
           				<th><h4>DISH</h4></th>
           				<th><h4>PRICE</h4></th>
+					<th><h4>DATE-TIME</h4></th>
     	      		</tr>
 	      		</thead>
 
@@ -145,7 +147,8 @@
             				echo "<tr>
             	  			<td>{$row['c_name']}</td>
         	      			<td>{$row['dish']}</td>
-              				<td>{$row['price']}</td>";
+              				<td>{$row['price']}</td>
+					<td>{$row['dt']}</td>";
               				echo "<tr>";
            				}
       			echo '</tbody>
