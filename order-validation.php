@@ -2,8 +2,6 @@
 	session_start();
 	if (isset($_SESSION['loggedincust']) && $_SESSION['loggedincust'] == true) 
 	{
-		echo "<br>";
-    	echo "<h1>Hello  " . $_SESSION['username'] . "! </h1>";
 	}
 	else
 	{
