@@ -33,8 +33,12 @@
 	$sql2 = "SELECT price FROM menu WHERE id='$txt'";
 	$que = mysqli_query($check,$sql2);
 	$row3 = mysqli_fetch_array($que);
+	
+	$now = new DateTime();
+    	$now->setTimezone(new DateTimeZone('Asia/Kolkata'));
+    	$x =  $now->format('Y-m-d H:i:s');
 
-	$sql3 = " INSERT INTO orders VALUES('$row1[0]','$row2[0]','$row3[0]','".$_SESSION['username']."') ";
+	$sql3 = " INSERT INTO orders VALUES('$row1[0]','$row2[0]','$row3[0]','".$_SESSION['username']."','$x') ";
 	$execute = mysqli_query($check,$sql3);
 
 	if($execute)
