@@ -49,7 +49,7 @@
 
     		session_start();
     		$_SESSION['loggedincust'] = true;
-    		$var = "SELECT c_name FROM customer WHERE c_mobile='$mob' ";
+    		$var = "SELECT c_mobile FROM customer WHERE c_mobile='$mob' ";
     		$execute = mysqli_query($check,$var);
     		$row = mysqli_fetch_array($execute);
 
