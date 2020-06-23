@@ -1,15 +1,5 @@
 <?php
-	session_start();
-	if (isset($_SESSION['loggedincust']) && $_SESSION['loggedincust'] == true) 
-	{
-		echo '<div class = "hello">';
-    	echo "<h2>Hello  " . $_SESSION['username'] . "! </h2>";
-    	echo '<br>';
-    	echo '<form method="POST" align = "center">';
-    	echo '<button type="submit" class="btn btn-danger id="logout" name="logout">LOG OUT</button>';
-    	echo '</form>';
-    	echo '</div>';
-	}
+
 	$username = "b9f744f1f8eff2";
 	$password = "8cff06d6";
 	$host = "us-cdbr-east-05.cleardb.net";
@@ -18,6 +8,25 @@
 	or die("Unable to connect");
 	$selected = mysqli_select_db($connector,"heroku_f6fd5729b854288")
     or die("Unable to connect");
+
+	session_start();
+	if (isset($_SESSION['loggedincust']) && $_SESSION['loggedincust'] == true) 
+	{
+		$temp = "SELECT c_name from customer WHERE c_mobile = '". $_SESSION['username'] ."'";
+    		$execute456 = mysqli_query($connector,$temp);
+
+    		$row1563 = mysqli_fetch_array($execute456);
+
+		echo '<div class = "hello">';
+    	echo "<h2>Hello ";
+      echo $row1563[0];
+      echo " !</h2>";
+    	echo '<br>';
+    	echo '<form method="POST" align = "center">';
+    	echo '<button type="submit" class="btn btn-danger id="logout" name="logout">LOG OUT</button>';
+    	echo '</form>';
+    	echo '</div>';
+	}
 
     $result = "SELECT * FROM menu";
     $execute = mysqli_query($connector,$result)
