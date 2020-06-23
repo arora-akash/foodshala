@@ -16,7 +16,7 @@
 
 	$connector = mysqli_connect($host,$username,$password)
 	or die("Unable to connect");
-	$selected = mysqli_select_db($connector,"foodshala")
+	$selected = mysqli_select_db($connector,"heroku_f6fd5729b854288")
     or die("Unable to connect");
 
     $result = "SELECT * FROM menu";
